@@ -1,4 +1,5 @@
 const print = @import("std").debug.print;
+const pow = @import("std").math.pow;
 
 pub fn main() void {
     print("We are going to do pointers!!\n",.{});
@@ -29,6 +30,19 @@ pub fn main() void {
 
     print_numbers(numbers[0..5]);
 
+    // var x: usize = sumOfSquares(5);
+    // print("x = {d}\n", .{x});
+
+    const myEnum = enum(u8) {
+        one = 1,
+        two = 2,
+        three = 3
+    };
+
+    // const one:u8 = @intFromEnum(myEnum.three);
+
+    print("one = {d}\n",.{@as(u8,@intFromEnum(myEnum.one))});
+
 }
 
 fn mod_number(n: *u8) void {
@@ -40,4 +54,16 @@ fn print_numbers(slc: []const u8) void {
         print("number = {d}\n", .{num});
     }
 }
+
+// Just for funzz
+// fn sumOfSquares(number: usize) usize {
+//     var temp = number;
+//     var sum: usize = 0;
+//     while (temp > 0) : (temp -= 1) {
+//         sum += pow(usize, temp, 2);
+//         print("sum = {d}\n", .{sum});
+//     }
+
+//     return sum;
+// }
 
