@@ -12,7 +12,6 @@ fn testReverse(comptime s: []const u8, expected: []const u8) !void {
 }
 
 pub fn reverse(buffer: []u8, s: []const u8) []u8 {
-    // _ = buffer;
     if (s.len == 0) {
         return buffer;
     }
