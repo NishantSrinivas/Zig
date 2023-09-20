@@ -28,4 +28,15 @@ pub fn main() void {
 
     var_str[0] = 'M';
     print("{s}", .{var_str});
+
+    accept_str(&var_str);
+
+    print("{s}", .{var_str});
+}
+
+fn accept_str(instr: []u8) void {
+    print("We have got this string => {s}", .{instr});
+
+    // We'll modify it
+    instr[0] = 'J';
 }
