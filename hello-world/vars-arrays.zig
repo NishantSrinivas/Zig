@@ -27,4 +27,13 @@ pub fn main() void {
     const len_my_array = my_array.len;
     std.debug.print("len of my array is {d}\n", .{len_my_array});
 
+    print_arr(u8, &my_array);
+
+}
+
+fn print_arr(comptime T: type, arr: []const T) void {
+    for (arr) |val| {
+        std.debug.print("{d} ", .{val});
+    }
+    std.debug.print("\n", .{});
 }
